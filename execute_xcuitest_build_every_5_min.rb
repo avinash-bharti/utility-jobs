@@ -20,24 +20,15 @@ apps = {
   "sampleApp" => {
     "main" => "bs://9f664a3af2d5240b5dc1076934d33b2e17aa45db",
     "test" => "bs://e868792f81617c1eac71faa58004ad2c16a1bd1a"
-  },
-  "budgetKeeper" => {
-    "main" => "bs://40a344468eec29ea932d49fa06d5c879cfe0db8c",
-    "test" => "bs://280089823061acdcc34e699ef55a2bcf3d2bef61"
-  },
-  "aws" => {
-    "main" => "bs://29c5476aa4d3eb106a502412d2e8920be885f887",
-    "test" => "bs://9fa5c8c2a4240f1d2f11e790938e8d0154821894"
   }
 }
 
 # Create a hash for the request data
 data = {
-  "devices" => ["iPhone 14-16", "iPhone 13-15"],
-  "project" => "xctest logsplitting",
+  "devices" => ["iPhone 12-17 beta", "iPhone 13-17 beta", "iPhone 12 Pro-17 Beta"],
+  "project" => "ios 17 5",
   "build" => "github actions",
-  "buildTag" => "XCTEST-SRI",
-  "singleRunnerInvocation" => "true",
+  "buildTag" => "ios 17 issue reappear",
   "networkLogs" => "true",
   "deviceLogs" => "true",
   "enableResultBundle" => "true"
