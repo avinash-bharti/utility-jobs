@@ -24,10 +24,6 @@ apps = {
   "sampleapp" => {
     "main" => "bs://36c5689263786de157ba0d5057000fc78be5ea0a",
     "test" => "bs://a2386bf878a4f63d8e591e110716254a7346fb31"
-  },
-  "bullseye" => {
-    "main" => "bs://b572d07bce59cc18b1709cd4483dae8275bb5376",
-    "test" => "bs://359f8144da87861f1cde0892273f0770931a0d34"
   }
 }
 
@@ -132,7 +128,7 @@ num_runs.times do |run_number|
       # Print the response
       puts "Response Code: #{response.code}"
       puts "Response Body: #{response.body}"
-      sleep (20)
+      sleep (1200)
   end
 
   # Sleep for 5 minutes (300 seconds) between runs
