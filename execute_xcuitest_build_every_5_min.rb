@@ -24,6 +24,10 @@ apps = {
   "sampleapp" => {
     "main" => "bs://36c5689263786de157ba0d5057000fc78be5ea0a",
     "test" => "bs://a2386bf878a4f63d8e591e110716254a7346fb31"
+  },
+  "budgetkeeper" => {
+    "main" => "bs://e36cfabf495f7b4a4c6aff8a80b3a2795c42521c",
+    "test" => "bs://91d13dc6c50e2387b72793ee5293d5643a5ac19d"
   }
 }
 
