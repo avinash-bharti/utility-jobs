@@ -17,9 +17,17 @@ url = URI.parse('https://api-cloud.browserstack.com/app-automate/xcuitest/v2/bui
 
 # app ids
 apps = {
-  "budgetKeeper" => {
-    "main" => "bs://e36cfabf495f7b4a4c6aff8a80b3a2795c42521c",
-    "test" => "bs://91d13dc6c50e2387b72793ee5293d5643a5ac19d"
+  "aws" => {
+    "main" => "bs://81981f4c47ab143062fedbd533c33657a3919108",
+    "test" => "bs://2c13d735f489829f4cc1917ea935c92d2de0c298"
+  },
+  "sampleapp" => {
+    "main" => "bs://36c5689263786de157ba0d5057000fc78be5ea0a",
+    "test" => "bs://a2386bf878a4f63d8e591e110716254a7346fb31"
+  },
+  "bullseye" => {
+    "main" => "bs://b572d07bce59cc18b1709cd4483dae8275bb5376",
+    "test" => "bs://359f8144da87861f1cde0892273f0770931a0d34"
   }
 }
 
@@ -124,9 +132,9 @@ num_runs.times do |run_number|
       # Print the response
       puts "Response Code: #{response.code}"
       puts "Response Body: #{response.body}"
-      sleep (2)
+      sleep (1500)
   end
 
   # Sleep for 5 minutes (300 seconds) between runs
-  sleep(interval) unless run_number == (num_runs - 1) # Don't sleep after the last run
+  #sleep(interval) unless run_number == (num_runs - 1) # Don't sleep after the last run
 end
