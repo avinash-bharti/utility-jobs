@@ -18,8 +18,8 @@ url = URI.parse('https://api-cloud.browserstack.com/app-automate/xcuitest/v2/bui
 # app ids
 apps = {
   "aws" => {
-    "main" => "bs://81981f4c47ab143062fedbd533c33657a3919108",
-    "test" => "bs://2c13d735f489829f4cc1917ea935c92d2de0c298"
+    "main" => "bs://04bafa2024578513db6b4cb2cb344acf7bfe9005",
+    "test" => "bs://e6812b00a0a7205d9016161bcc208a4e47472b53"
   },
   "sampleapp" => {
     "main" => "bs://36c5689263786de157ba0d5057000fc78be5ea0a",
