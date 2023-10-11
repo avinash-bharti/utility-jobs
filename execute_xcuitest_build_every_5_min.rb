@@ -23,7 +23,64 @@ apps = {
   }
 }
 
-hosts = ["203.32.41.137", "203.32.41.138"]
+hosts = [
+  { 
+    "host" => "203.32.41.137",
+    "instance" => "00008120-001179CC0158201E"
+  },
+    { 
+    "host" => "203.32.41.137",
+    "instance" => "00008120-00090DC83EB8201E"
+  },
+    { 
+    "host" => "203.32.41.137",
+    "instance" => "00008120-000E49DC2E38201E"
+  },
+    { 
+    "host" => "203.32.41.137",
+    "instance" => "00008120-000471460E00201E"
+  },
+    { 
+    "host" => "203.32.41.137",
+    "instance" => "00008120-001234943A04201E"
+  },
+    { 
+    "host" => "203.32.41.137",
+    "instance" => "00008120-00144D021138201E"
+  },
+    { 
+    "host" => "203.32.41.137",
+    "instance" => "00008120-000605021138201E"
+  },
+    { 
+    "host" => "203.32.41.137",
+    "instance" => "00008120-001179CC0158201E"
+  },
+    { 
+    "host" => "203.32.41.138",
+    "instance" => "00008120-000E758A1A62201E"
+  },
+    { 
+    "host" => "203.32.41.138",
+    "instance" => "00008120-000C604E3A32201E"
+  },
+    { 
+    "host" => "203.32.41.138",
+    "instance" => "00008120-001A79CC0C80201E"
+  },
+    { 
+    "host" => "203.32.41.138",
+    "instance" => "00008120-000A51AC3A92201E"
+  },
+    { 
+    "host" => "203.32.41.138",
+    "instance" => "00008120-001C483E2200201E"
+  },
+    { 
+    "host" => "203.32.41.138",
+    "instance" => "00008120-000278C41192201E"
+  }
+]
 
 # Create a hash for the request data
 data = {
@@ -42,14 +99,15 @@ num_runs.times do |run_number|
   puts "Run Number: #{run_number + 1}"
 
   apps.each do |key, value|
-    hosts.each do |host|
       # Create an HTTP POST request
       request = Net::HTTP::Post.new(url)
       request['Content-Type'] = 'application/json'
   
       data["app"] = value["main"]
       data["testSuite"] = value["test"]
-      data["machine"] = host
+      host = hosts.sample
+      machine = "#{host["host"]}:#{host["instance"]}"
+      data["machine"] = machine
       request.body = data.to_json
   
       # Encode the credentials in Base64
@@ -67,7 +125,6 @@ num_runs.times do |run_number|
       puts "Response Code: #{response.code}"
       puts "Response Body: #{response.body}"
       sleep (2)
-    end
   end
 
   # Sleep for 5 minutes (300 seconds) between runs
