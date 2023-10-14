@@ -33,66 +33,122 @@ apps = {
 
 hosts = [
   { 
-    "host" => "203.32.41.137",
-    "instance" => "00008120-001179CC0158201E"
+    "host" => "193.186.253.250",
+    "instance" => "00008110-0018345A1E01401E",
+          "device" => "iPhone 13-17.0"
+
   },
     { 
-    "host" => "203.32.41.137",
-    "instance" => "00008120-00090DC83EB8201E"
+    "host" => "193.186.253.250",
+    "instance" => "00008101-000D50DC0CE9003A",
+                "device" => "iPhone 12-17.0"
   },
     { 
-    "host" => "203.32.41.137",
-    "instance" => "00008120-000E49DC2E38201E"
+    "host" => "193.186.253.250",
+    "instance" => "00008101-000604AE3463003A",
+                "device" => "iPhone 12-17.0"
   },
     { 
-    "host" => "203.32.41.137",
-    "instance" => "00008120-000471460E00201E"
+    "host" => "193.186.253.250",
+    "instance" => "00008101-000A78EE3C04001E",
+                "device" => "iPhone 12-17.0"
   },
     { 
-    "host" => "203.32.41.137",
-    "instance" => "00008120-001234943A04201E"
+    "host" => "193.186.253.250",
+    "instance" => "00008101-001E5D2C1A12001E",
+      "device" => "iPhone 12-17.0"
   },
     { 
-    "host" => "203.32.41.137",
-    "instance" => "00008120-00144D021138201E"
+    "host" => "193.186.253.250",
+    "instance" => "00008101-000615C114D2001E",
+      "device" => "iPhone 12-17.0"
   },
     { 
-    "host" => "203.32.41.137",
-    "instance" => "00008120-000605021138201E"
+    "host" => "193.186.253.250",
+    "instance" => "00008101-001430811451003A",
+      "device" => "iPhone 12-17.0"
   },
     { 
-    "host" => "203.32.41.137",
-    "instance" => "00008120-001179CC0158201E"
+    "host" => "193.186.253.250",
+    "instance" => "00008101-000E44A92678001E",
+      "device" => "iPhone 12-17.0"
+  },
+
+
+
+  
+    { 
+    "host" => "209.208.245.114",
+    "instance" => "00008101-000E69940E61001E",
+      "device" => "iPhone 12-17.0"
   },
     { 
-    "host" => "203.32.41.138",
-    "instance" => "00008120-000E758A1A62201E"
+    "host" => "209.208.245.114",
+    "instance" => "00008101-000E31693E43003A",
+            "device" => "iPhone 12-17.0"
+
   },
     { 
-    "host" => "203.32.41.138",
-    "instance" => "00008120-000C604E3A32201E"
+    "host" => "209.208.245.114",
+    "instance" => "00008101-000544123A05001E",
+            "device" => "iPhone 12-17.0"
+
   },
     { 
-    "host" => "203.32.41.138",
-    "instance" => "00008120-001A79CC0C80201E"
+    "host" => "209.208.245.114",
+    "instance" => "00008101-0004282921A1001E",
+            "device" => "iPhone 12-17.0"
+
   },
     { 
-    "host" => "203.32.41.138",
-    "instance" => "00008120-000A51AC3A92201E"
+    "host" => "209.208.245.114",
+    "instance" => "00008101-000A28123C03001E",
+            "device" => "iPhone 12-17.0"
+
   },
+
+
+
+  
     { 
-    "host" => "203.32.41.138",
-    "instance" => "00008120-001C483E2200201E"
+    "host" => "85.209.178.115",
+    "instance" => "00008101-00163C1C0A50001E",
+                  "device" => "iPhone 12-17.0"
   },
-    { 
-    "host" => "203.32.41.138",
-    "instance" => "00008120-000278C41192201E"
+      { 
+    "host" => "85.209.178.115",
+    "instance" => "00008120-001A79C20C90A01E",
+                    "device" => "iPhone 15-17.0"
+  },
+      { 
+    "host" => "85.209.178.115",
+    "instance" => "00008120-00092C1C14D2201E",
+                    "device" => "iPhone 15-17.0"
+  },
+      { 
+    "host" => "85.209.178.115",
+    "instance" => "00008120-000004320E50A01E",
+                    "device" => "iPhone 15-17.0"
+  },
+      { 
+    "host" => "85.209.178.115",
+    "instance" => "00008120-0009481211D2201E",
+                    "device" => "iPhone 15-17.0"
+  },
+      { 
+    "host" => "85.209.178.115",
+    "instance" => "00008120-000C242E2100201E",
+                    "device" => "iPhone 15-17.0"
+  },
+      { 
+    "host" => "85.209.178.115",
+    "instance" => "00008120-000615213438201E",
+                    "device" => "iPhone 15 Plus-17.0"
   }
 ]
 
 # Create a hash for the request data
 data = {
-  "devices" => ["iPhone 15-17.0"],
   "project" => "ios 17",
   "build" => "github actions",
   "buildTag" => "ios 17 workaround",
@@ -116,6 +172,7 @@ num_runs.times do |run_number|
       host = hosts.sample
       machine = "#{host["host"]}:#{host["instance"]}"
       data["machine"] = machine
+      data["devices"] = [host["device"]]
       request.body = data.to_json
   
       # Encode the credentials in Base64
