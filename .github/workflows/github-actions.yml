@@ -34,4 +34,4 @@ jobs:
       env:
         USERNAME: ${{ secrets.USERNAME }}
         ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
-      run: ruby execute_xcuitest_build_every_5_min.rb "$USERNAME" "$ACCESS_KEY" 500 300 
+      run: ruby execute_xcuitest_build_every_5_min.rb "$USERNAME" "$ACCESS_KEY" 500 900 
