@@ -290,7 +290,6 @@ num_runs.times do |run_number|
       # data["machine"] = machine
       # data["devices"] = [host["device"]]
       data["devices"] = ["iPhone 12 Pro-17"]
-      data["buildTag"] = data["buildTag"] + " #{run_number + 1}"
       request.body = data.to_json
   
       # Encode the credentials in Base64
