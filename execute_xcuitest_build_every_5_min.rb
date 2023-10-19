@@ -267,7 +267,7 @@ hosts = [
 data = {
   "project" => "ios 17",
   "build" => "github actions",
-  "buildTag" => "ios 17 workaround",
+  "buildTag" => "iPhone 12 Pro ios 17 GA - ",
   "networkLogs" => "true",
   "deviceLogs" => "true",
   "enableResultBundle" => "true"
@@ -285,10 +285,12 @@ num_runs.times do |run_number|
   
       data["app"] = value["main"]
       data["testSuite"] = value["test"]
-      host = hosts.sample
-      machine = "#{host["host"]}:#{host["instance"]}"
-      data["machine"] = machine
-      data["devices"] = [host["device"]]
+      # host = hosts.sample
+      # machine = "#{host["host"]}:#{host["instance"]}"
+      # data["machine"] = machine
+      # data["devices"] = [host["device"]]
+      data["devices"] = ["iPhone 12 Pro-17"]
+      data["buildTag"] = data["buildTag"] + " #{run_number + 1}"
       request.body = data.to_json
   
       # Encode the credentials in Base64
