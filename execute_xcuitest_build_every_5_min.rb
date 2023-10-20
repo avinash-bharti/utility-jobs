@@ -306,7 +306,7 @@ num_runs.times do |run_number|
       # Print the response
       puts "Response Code: #{response.code}"
       puts "Response Body: #{response.body}"
-      sleep (900)
+      sleep (500)
   end
 
   # Sleep for 5 minutes (300 seconds) between runs
